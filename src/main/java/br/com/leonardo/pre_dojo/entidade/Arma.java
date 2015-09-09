@@ -1,5 +1,7 @@
 package br.com.leonardo.pre_dojo.entidade;
 
-public class Arma {
+import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
+
+public class Arma extends AbstractEntity{
 
 }

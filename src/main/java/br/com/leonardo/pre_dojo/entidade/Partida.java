@@ -1,5 +1,7 @@
 package br.com.leonardo.pre_dojo.entidade;
 
-public class Partida {
+import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
+
+public class Partida extends AbstractEntity{
 
 }

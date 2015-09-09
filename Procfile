@@ -1,1 +1,1 @@
-web: java -cp /target/classes/br/com/estudos/jpasparkfreemarker/controller/:target/dependency/* Main 
+web: java -cp /target/classes/br/com/leonardo/pre_dojo/controller/:target/dependency/* MainController
