@@ -20,9 +20,8 @@ Ou acesse o projeto no [Heroku](https://pre-dojo.herokuapp.com/)
 6. Gerar Ranking
 7. Testes
 
-###Observacoes
+###Observações
 
 O projeto ainda está incompleto, só consegui começar na terça-feira 08/09 e preciso entregar para a recrutadora 5A até 10/09 de manhã.
 Mesmo assim, vou dar continuidade no Road Map, acredito que até o fim da semana esteja OK.
-Gostaria de implementar gŕaficos com HighChart, para ficar bem legal a parte de report
-E testes unitários.
+Gostaria de implementar gŕaficos com HighChart, para ficar bem legal a parte de report, e testes unitários.
