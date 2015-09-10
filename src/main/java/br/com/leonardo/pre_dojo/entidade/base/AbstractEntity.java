@@ -1,6 +1,5 @@
 package br.com.leonardo.pre_dojo.entidade.base;
 
-import java.math.BigInteger;
 
 /**
  * @author turbiani
@@ -8,15 +7,14 @@ import java.math.BigInteger;
  */
 public abstract class AbstractEntity {
 	
-	private BigInteger id;
+	private String data;
 
-	public BigInteger getId() {
-		return id;
+	public String getData() {
+		return data;
 	}
 
-	public void setId(BigInteger id) {
-		this.id = id;
+	public void setData(String data) {
+		this.data = data;
 	}
 	
-
 }

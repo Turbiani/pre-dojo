@@ -58,7 +58,7 @@ public final class MainController {
 			}
 		});		
 		//CONTA CRUD
-		Spark.get(new TemplateBaseRoute("/conta", "/conta/index.ftl") {
+		Spark.get(new TemplateBaseRoute("/report", "/report/index.ftl") {
 			@Override
 			protected void doHandle(Request request, Response response, Writer writer)
 					throws IOException, TemplateException {
@@ -223,7 +223,7 @@ public final class MainController {
 					e.printStackTrace();
 				} 
 			}	
-		});*/
+		});*/	
 	}
 	
 	

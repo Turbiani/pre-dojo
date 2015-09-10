@@ -14,123 +14,62 @@ import br.com.leonardo.pre_dojo.entidade.Jogador;
 public final class JogadorDAO extends AbstractDAO<Jogador>{
 	
 
-	@Override
-	public Jogador busca(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Jogador busca(Integer id, EntityManager em) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Jogador> lista() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Jogador> lista(EntityManager em) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void remove(Jogador object) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void remove(int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void remove(Jogador object, EntityManager em) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void remove(int id, EntityManager em) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void adiciona(Jogador object) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void adiciona(Jogador object, EntityManager em) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-	/*public ContaDAO(EntityManager em) {
+	public JogadorDAO(EntityManager em) {
 		super(em);
 	}
 	
-	*//**
-	 * Default Constructor
-	 *//*
-	public ContaDAO(){}
-
-	public Conta busca(Integer id) {
-		Conta conta = this.getEm().find(Conta.class, id); 
+	public JogadorDAO(){}
+	
+	@Override
+	public Jogador busca(Integer id) {
+		Jogador jogador = this.getEm().find(Jogador.class, id); 
 		fechaEm();
-		return conta;
+		return jogador;
 	}
-
-	public Conta busca(Integer id, EntityManager em) {
-		return em.find(Conta.class, id); 
+	@Override
+	public Jogador busca(Integer id, EntityManager em) {
+		return em.find(Jogador.class, id); 
 	}
-
-	public List<Conta> lista() {
-		List<Conta> contas =  this.getEm().createQuery("Select c from Conta c", Conta.class).getResultList();
+	@Override
+	public List<Jogador> lista() {
+		List<Jogador> jogadores =  this.getEm().createQuery("Select j from Jogador j", Jogador.class).getResultList();
 		fechaEm();
-		return contas;
+		return jogadores;
 	}
-
-	public List<Conta> lista(EntityManager em) {
-		return em.createQuery("Select c from Conta c", Conta.class).getResultList();
+	@Override
+	public List<Jogador> lista(EntityManager em) {
+		return em.createQuery("Select c from Jogador c", Jogador.class).getResultList();
 	}
-
-	public void remove(Conta conta) {
-		this.getEm().remove(conta);
+	@Override
+	public void remove(Jogador jogador) {
+		this.getEm().remove(jogador);
 		fechaEm();		
 	}
-
+		
+	@Override
 	public void remove(int id) {
-		Conta c = this.busca(id);
-		this.getEm().remove(c);
+		Jogador jogador = this.busca(id);
+		this.getEm().remove(jogador);
 		fechaEm();
 	}
-
-	public void remove(Conta conta, EntityManager em) {
-		em.remove(conta);
+	@Override
+	public void remove(Jogador jogador, EntityManager em) {
+		em.remove(jogador);
 	}
-
+	@Override
 	public void remove(int id, EntityManager em) {
-		Conta c = this.busca(id);
-		em.remove(c);
+		Jogador jogador = this.busca(id);
+		em.remove(jogador);
 	}
-
-	public void adiciona(Conta conta) {
-		this.getEm().persist(conta);
+	@Override
+	public void adiciona(Jogador jogador) {
+		this.getEm().persist(jogador);
 		fechaEm();
 	}
-
-	public void adiciona(Conta conta, EntityManager em) {
-		em.persist(conta);
-	}*/
+	
+	@Override
+	public void adiciona(Jogador jogador, EntityManager em) {
+		em.persist(jogador);
+	}
 	
 }
