@@ -1,1 +1,1 @@
-web: java -cp /target/classes/br/com/leonardo/pre_dojo/controller/:target/dependency/* MainController
+web: java $JAVA_OPTS -jar pre-dojo-0.0.1-SNAPSHOT-jar-with-dependencies.jar
