@@ -10,15 +10,17 @@ jpa-spark-freemarker, que vocês podem encontrar no meu GitHub tbm
 O Spark embeda um Jetty, para rodar o projeto basta ir na MainController e Run > Java Application
 Ou acesse o projeto no [Heroku](https://pre-dojo.herokuapp.com/) 
 
-#Rod Map
+###Rod Map
 
-Cricar o KillerExecutor para acoes de jogador mata jogador, e WORLD mata Jogador
-Cricar o EncerraPartidaExecutor
-Fazer a opção de file upload de arquivo de log
-Pagina de relatório
-Querys para relatório
-Gerar Ranking
-Testes
+1. Cricar o KillerExecutor para acoes de jogador mata jogador, e WORLD mata Jogador
+2. Cricar o EncerraPartidaExecutor
+3. Fazer a opção de file upload de arquivo de log
+4.Pagina de relatório
+5. Querys para relatório
+6. Gerar Ranking
+7. Testes
+
+###Observacoes
 
 O projeto ainda está incompleto, só consegui começar na terça-feira 08/09 e preciso entregar para a recrutadora 5A até 10/09 de manhã.
 Mesmo assim, vou dar continuidade no Road Map, acredito que até o fim da semana esteja OK.
