@@ -12,6 +12,7 @@ O Spark embeda um Jetty, para rodar o projeto basta ir na MainController e Run >
 Rod Map
 
 Cricar o KillerExecutor para acoes de jogador mata jogador, e WORLD mata Jogador
+Cricar o EncerraPartidaExecutor
 Fazer a opção de file upload de arquivo de log
 Pagina de relatório
 Querys para relatório
