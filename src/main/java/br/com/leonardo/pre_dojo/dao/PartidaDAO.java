@@ -63,7 +63,9 @@ public final class PartidaDAO extends AbstractDAO<Partida>{
 	}
 	@Override
 	public void adiciona(Partida partida) {
+		this.getEm().getTransaction().begin();
 		this.getEm().persist(partida);
+		this.getEm().getTransaction().commit();
 		fechaEm();
 	}
 	
@@ -72,4 +74,18 @@ public final class PartidaDAO extends AbstractDAO<Partida>{
 		em.persist(partida);
 	}
 	
+	public void atualiza(Partida p){
+		this.getEm().getTransaction().begin();
+		this.getEm().persist(p);
+		this.getEm().getTransaction().commit();
+		fechaEm();
+		
+	}
+	
+	public void atualiza(Partida p, EntityManager em){
+		em.getTransaction().begin();
+		em.persist(p);
+		em.getTransaction().commit();
+		em.close();
+	}
 }

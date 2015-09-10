@@ -1,2 +1,19 @@
-Coloque aqui suas instru��es ou coment�rios que ache �til/relevantes para possamos ler 
-quando estivermos avaliando a sua solu��o
+Olá,
+
+Estou usando JPA com MySql na parte de persistência. Na parte de apresentação, estou utilizando 
+uma microframework REST baseada no Sinatra do Ruby, chamada SparkJava.  E como engine de template
+adotei o fremarker.
+Boa parte do código eu utilizei como base um projeto de estudos pessoais meu, chamado
+jpa-spark-freemarker, que vocês podem encontrar no meu GitHub tbm
+
+
+Rod Map
+
+Fazer o file upload de arquivo de log
+Pagina de relatório
+Querys para relatório
+Testes
+
+#Comecei o projeto na terça-feira 08/09, dia preciso entregar para a recrutadora 5A até 09/09.
+#Se for possível me dar mais um tempo eu agradeço, gostaria de implementar gŕaficos com HighChart
+#E testes unitários e de integração 

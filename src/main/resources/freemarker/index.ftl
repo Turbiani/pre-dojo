@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>CRUD JPA-Spark-Freemarker</title>
+    <title>Pre-dojo Amil</title>
 
     <!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -24,13 +23,20 @@
   <body>    
     <div class="container">
       <div class="jumbotron">
-        <h1>Painel administrativo</h1>
-        <p>Desevolvido com JPA + MySQL, SparkJava + Freemarker + Bootstrap</p>
+        <img src="https://logodownload.org/wp-content/uploads/2014/06/amil-logo.png" width="300"/>
       </div> 
-      <ul class="nav nav-pills">        
-        <li><a href="/conta" class="list-group-item">Conta</a></li>
-        <li><a href="#" class="list-group-item">Movimentacao</a></li>        
-      </div>
+      
+      
+      <form  class="form-horizontal" role="form" action="/report" method="POST">
+        <div class="form-group">
+          <label for="log" class="control-label col-sm-1">Log:</label>
+          <div class="col-sm-4">
+            <textarea class="form-control" rows="5" id="log" name="log" ></textarea>
+          </div>
+           <button type="submit" class="btn btn-default">Submit</button>  
+        </div>
+      </form>
+      
     </div>
 		      
 		

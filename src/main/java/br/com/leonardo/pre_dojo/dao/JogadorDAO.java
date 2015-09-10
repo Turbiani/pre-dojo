@@ -3,6 +3,7 @@ package br.com.leonardo.pre_dojo.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import br.com.leonardo.pre_dojo.dao.base.AbstractDAO;
 import br.com.leonardo.pre_dojo.entidade.Jogador;
@@ -63,7 +64,9 @@ public final class JogadorDAO extends AbstractDAO<Jogador>{
 	}
 	@Override
 	public void adiciona(Jogador jogador) {
+		this.getEm().getTransaction().begin();
 		this.getEm().persist(jogador);
+		this.getEm().getTransaction().commit();
 		fechaEm();
 	}
 	
@@ -72,4 +75,9 @@ public final class JogadorDAO extends AbstractDAO<Jogador>{
 		em.persist(jogador);
 	}
 	
+	public Jogador findByNome(String nome){
+		TypedQuery<Jogador> query = this.getEm().createNamedQuery("Jogador.findByNome", Jogador.class);
+		query.setParameter("nome", nome);
+		return query.getResultList().get(0);
+	}
 }

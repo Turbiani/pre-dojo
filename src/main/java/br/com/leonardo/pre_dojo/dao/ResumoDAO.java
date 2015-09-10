@@ -63,7 +63,9 @@ public final class ResumoDAO extends AbstractDAO<Resumo>{
 	}
 	@Override
 	public void adiciona(Resumo resumo) {
+		this.getEm().getTransaction().begin();
 		this.getEm().persist(resumo);
+		this.getEm().getTransaction().commit();
 		fechaEm();
 	}
 	

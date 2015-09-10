@@ -63,7 +63,9 @@ public final class AtividadeDAO extends AbstractDAO<Atividade>{
 	}
 	@Override
 	public void adiciona(Atividade atividade) {
+		this.getEm().getTransaction().begin();
 		this.getEm().persist(atividade);
+		this.getEm().getTransaction().commit();
 		fechaEm();
 	}
 	

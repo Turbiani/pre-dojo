@@ -3,11 +3,14 @@ package br.com.leonardo.pre_dojo.entidade;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
+import br.com.leonardo.pre_dojo.enums.PartidaStatus;
 @Entity
 public class Partida extends AbstractEntity{
 	@Id
@@ -15,8 +18,11 @@ public class Partida extends AbstractEntity{
 	
 	@OneToOne
 	private	Resumo resumo;
-	@OneToMany
+	@OneToMany(mappedBy="partida")
 	private List<Atividade> atividades;
+	@Enumerated(EnumType.STRING)
+	private PartidaStatus status;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -34,6 +40,12 @@ public class Partida extends AbstractEntity{
 	}
 	public void setAtividades(List<Atividade> atividades) {
 		this.atividades = atividades;
+	}
+	public PartidaStatus getStatus() {
+		return status;
+	}
+	public void setStatus(PartidaStatus status) {
+		this.status = status;
 	}
 	
 	

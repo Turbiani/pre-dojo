@@ -3,6 +3,7 @@ package br.com.leonardo.pre_dojo.entidade;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
@@ -11,16 +12,16 @@ public class Atividade extends AbstractEntity{
 	@Id
 	@GeneratedValue
 	private Integer id;
+	@ManyToOne
+	private Partida partida;
 	@OneToOne
 	private Jogador jogadorMatador;
 	@OneToOne
 	private Jogador jogadorMorto;
 	private String  arma;
+	
 	public Integer getId() {
 		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	public Jogador getJogadorMatador() {
 		return jogadorMatador;
@@ -39,6 +40,12 @@ public class Atividade extends AbstractEntity{
 	}
 	public void setArma(String arma) {
 		this.arma = arma;
+	}
+	public Partida getPartida() {
+		return partida;
+	}
+	public void setPartida(Partida partida) {
+		this.partida = partida;
 	}
 	
 
