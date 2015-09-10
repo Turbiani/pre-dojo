@@ -33,7 +33,7 @@ public final class MainController {
 	public MainController() throws IOException{
 		this.cfg 	  			= createFreemarkerConfiguration();
 		this.JPAUtil            = new JPAUtil();
-		setPort(new Integer(System.getenv("PORT")).intValue());
+		setPort(Integer.valueOf(System.getenv("PORT")));
         carregaRotas();
 	}
 	
