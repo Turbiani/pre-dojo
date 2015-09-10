@@ -8,6 +8,7 @@ jpa-spark-freemarker, que vocês podem encontrar no meu GitHub tbm
 
 ###IMPORTANTE
 O Spark embeda um Jetty, para rodar o projeto basta ir na MainController e Run > Java Application
+Ou acesse o projeto no [Heroku](https://pre-dojo.herokuapp.com/) 
 
 Rod Map
 
