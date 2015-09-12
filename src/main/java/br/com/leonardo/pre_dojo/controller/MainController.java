@@ -36,9 +36,9 @@ public final class MainController {
 		this.cfg 	  			= createFreemarkerConfiguration();
 		this.JPAUtil            = new JPAUtil();
 		//EM DEV
-		//setPort(8080);
+		setPort(8080);
 		//EM PROD
-		setPort(Integer.valueOf(System.getenv("PORT")));
+		//setPort(Integer.valueOf(System.getenv("PORT")));
 		carregaRotas();
 	}
 	
