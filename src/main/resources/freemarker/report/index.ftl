@@ -26,6 +26,11 @@
         <img src="https://logodownload.org/wp-content/uploads/2014/06/amil-logo.png" width="300"/>
       </div>  		     
 		<div class="list-group">
+			<p>
+				<#if error??>
+				<div class="alert alert-danger">${error}.</div>
+				</#if>
+			</p>
 	    	<a href="/">
 	    		<span class="glyphicon glyphicon-arrow-left"></span> Voltar
 	    	</a>

@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
 import br.com.leonardo.pre_dojo.enums.PartidaStatus;
 @Entity
-public class Partida extends AbstractEntity{
+public class Partida extends AbstractEntity implements Cloneable{
 	@Id
 	private Integer id;
 	
@@ -48,5 +48,10 @@ public class Partida extends AbstractEntity{
 		this.status = status;
 	}
 	
+	@Override		
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+	     
 	
 }

@@ -14,6 +14,7 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.Spark;
+import br.com.leonardo.pre_dojo.exception.PreDojoDomainException;
 import br.com.leonardo.pre_dojo.factory.ExecutorFactory;
 import br.com.leonardo.pre_dojo.interfaces.Executable;
 import br.com.leonardo.pre_dojo.utils.JPAUtil;
@@ -28,20 +29,23 @@ import freemarker.template.TemplateException;
 public final class MainController {
 	private final Configuration 	cfg;
 	private final ExecutorFactory   executorFactory = ExecutorFactory.getInstance();
+	@SuppressWarnings("unused")
 	private final JPAUtil    		JPAUtil;
 	
 	public MainController() throws IOException{
 		this.cfg 	  			= createFreemarkerConfiguration();
 		this.JPAUtil            = new JPAUtil();
+		//EM DEV
+		//setPort(8080);
+		//EM PROD
 		setPort(Integer.valueOf(System.getenv("PORT")));
-        carregaRotas();
+		carregaRotas();
 	}
 	
 	public static void main(String[] args) {
 		try {
 			new MainController();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -70,13 +74,16 @@ public final class MainController {
 			@Override
 			protected void doHandle(Request request, Response response, Writer writer)
 					throws IOException, TemplateException {
-				
+				Map<String, Object> document = new HashMap<String, Object>();
 				String command = StringEscapeUtils.escapeHtml4(request.queryParams("log"));
 				
 				Executable executable = executorFactory.createExecutor(command);
-				executable.execute();
+				try {
+					executable.execute();
+				} catch (PreDojoDomainException e) {
+					document.put("error", e.getMessage());
+				}
 				
-				Map<String, Object> document = new HashMap<String, Object>();
                 template.process(document, writer);
 			}
 		});
