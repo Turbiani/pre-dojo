@@ -48,6 +48,10 @@ public class Partida extends AbstractEntity implements Cloneable{
 		this.status = status;
 	}
 	
+	public boolean isIniciada(){
+		return this.status==PartidaStatus.INICIADA;
+	}
+	
 	@Override		
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
