@@ -87,21 +87,20 @@ public class PartidaBO {
 	}
 	
 	/**
-	 * @param p
 	 * @param matador
 	 * @param assassinado
 	 * @param arma
 	 * @throws PreDojoDomainException 
 	 */
-	public void matarJogador(Partida p, Jogador matador, Jogador assassinado, String arma, Calendar data) throws PreDojoDomainException{
+	public void matarJogador(Jogador matador, Jogador assassinado, String arma, Calendar data) throws PreDojoDomainException{
 		Atividade atividade = null;
 		if(currentPartida==null){
 			throw new PreDojoDomainException("NAO EXISTE PARTIDA INICIADA PARA PODER EXECUTAR ESTE COMANDO");
-		}else if(currentPartida.getId().intValue()==p.getId().intValue()){
+		}else if(currentPartida.isIniciada()){
 			atividade = new Atividade();
 			atividade.setJogadorMatador(matador);
 			atividade.setJogadorMorto(assassinado);
-			atividade.setPartida(p);
+			atividade.setPartida(currentPartida);
 			atividade.setArma(arma);
 			atividade.setData(data);
 			try {
@@ -112,27 +111,26 @@ public class PartidaBO {
 				e.printStackTrace();
 			}
 		}else{
-			throw new PreDojoDomainException("PARTIDA INVALIDA, PARTIDA EM ANDAMENTO ID [" + currentPartida.getId().toString() + "]");
+			throw new PreDojoDomainException("PARTIDA ENCERRADA");
 		}
 	}
 	
 	//MORTO PELO <WORLD>
 	/**
-	 * @param p
 	 * @param assassinado
 	 * @throws PreDojoDomainException 
 	 */
-	public void matarJogador(Partida p, Jogador assassinado, Calendar data) throws PreDojoDomainException{
+	public void matarJogador(Jogador assassinado, Calendar data) throws PreDojoDomainException{
 		Atividade atividade = null;
 		if(currentPartida==null){
 			throw new PreDojoDomainException("NAO EXISTE PARTIDA INICIADA PARA PODER EXECUTAR ESTE COMANDO");
-		}else if(currentPartida.getId().intValue()==p.getId().intValue()){
+		}else if(currentPartida.isIniciada()){
 			Jogador matador = new Jogador();
 			matador.setNome("<WORLD>");
 			atividade = new Atividade();
 			atividade.setJogadorMatador(matador);
 			atividade.setJogadorMorto(assassinado);
-			atividade.setPartida(p);
+			atividade.setPartida(currentPartida);
 			atividade.setArma("<WORLD>");
 			atividade.setData(data);
 			try {
@@ -143,7 +141,7 @@ public class PartidaBO {
 				e.printStackTrace();
 			}
 		}else{
-			throw new PreDojoDomainException("PARTIDA INVALIDA, PARTIDA EM ANDAMENTO ID [" + currentPartida.getId().toString() + "]");
+			throw new PreDojoDomainException("PARTIDA ENCERRADA");
 		}
 	}
 }
