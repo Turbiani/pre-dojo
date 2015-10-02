@@ -17,7 +17,7 @@ public class Partida extends AbstractEntity implements Cloneable{
 	private Integer id;
 	
 	@OneToOne
-	private	Resumo resumo;
+	private	Ranking ranking;
 	@OneToMany(mappedBy="partida")
 	private List<Atividade> atividades;
 	@Enumerated(EnumType.STRING)
@@ -29,11 +29,11 @@ public class Partida extends AbstractEntity implements Cloneable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Resumo getResumo() {
-		return resumo;
+	public Ranking getRanking() {
+		return ranking;
 	}
-	public void setResumo(Resumo resumo) {
-		this.resumo = resumo;
+	public void setRanking(Ranking ranking) {
+		this.ranking = ranking;
 	}
 	public List<Atividade> getAtividades() {
 		return atividades;

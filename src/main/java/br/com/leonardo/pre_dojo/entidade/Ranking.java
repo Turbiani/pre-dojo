@@ -1,8 +1,11 @@
 package br.com.leonardo.pre_dojo.entidade;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
@@ -13,9 +16,11 @@ public class Ranking extends AbstractEntity{
 	private Integer id;
 	@OneToOne
 	private Partida partida;
+	@OneToMany(mappedBy="partida")
+	private List<ResumoJogadorPartida> resumoJogadorPartida;
 	private String 	nomeJogadorVencedor;
-	private Integer qtdeAssassinatos;
-	private String	qtdeMortes;
+	private String 	maiorStreakPartida;
+	private String	armaMaisLetalVencedor;
 	
 	public Integer getId() {
 		return id;
@@ -35,18 +40,24 @@ public class Ranking extends AbstractEntity{
 	public void setNomeJogadorVencedor(String nomeJogadorVencedor) {
 		this.nomeJogadorVencedor = nomeJogadorVencedor;
 	}
-	public Integer getQtdeAssassinatos() {
-		return qtdeAssassinatos;
+	public String getMaiorStreakPartida() {
+		return maiorStreakPartida;
 	}
-	public void setQtdeAssassinatos(Integer qtdeAssassinatos) {
-		this.qtdeAssassinatos = qtdeAssassinatos;
+	public void setMaiorStreakPartida(String maiorStreakPartida) {
+		this.maiorStreakPartida = maiorStreakPartida;
 	}
-	public String getQtdeMortes() {
-		return qtdeMortes;
+	public String getArmaMaisLetalVencedor() {
+		return armaMaisLetalVencedor;
 	}
-	public void setQtdeMortes(String qtdeMortes) {
-		this.qtdeMortes = qtdeMortes;
+	public void setArmaMaisLetalVencedor(String armaMaisLetalVencedor) {
+		this.armaMaisLetalVencedor = armaMaisLetalVencedor;
 	}
-	
+	public List<ResumoJogadorPartida> getResumoJogadorPartida() {
+		return resumoJogadorPartida;
+	}
+	public void setResumoJogadorPartida(
+			List<ResumoJogadorPartida> resumoJogadorPartida) {
+		this.resumoJogadorPartida = resumoJogadorPartida;
+	}
 	
 }
