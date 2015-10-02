@@ -31,6 +31,27 @@
 				<div class="alert alert-danger">${error}.</div>
 				</#if>
 			</p>
+			<table class="table table-hover table-bordered">
+        <#if rankings??>
+        <thead>
+          <tr>
+            <th>Partida</th>
+            <th>nomeJogadorVencedor</th>
+            <th>qtdeAssassinatos</th>
+            <th>qtdeMortes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <#list rankings as ranking>
+          <tr>
+            <td>${ranking["partida.id"]}</td>
+            <td>${ranking["nomeJogadorVencedor"]}</td>
+            <td>${ranking["qtdeAssassinatos"]}</td>
+            <td>${ranking["qtdeMortes"]}</td>
+          </tr>
+          </#list>          
+        </tbody>
+	    </#if>	
 	    	<a href="/">
 	    		<span class="glyphicon glyphicon-arrow-left"></span> Voltar
 	    	</a>

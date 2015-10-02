@@ -15,7 +15,6 @@ public class Jogador extends AbstractEntity{
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
 	private String nome;
 	
 	public Integer getId() {

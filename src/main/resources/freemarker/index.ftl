@@ -37,6 +37,12 @@
         </div>
       </form>
       
+      <p>
+		<#if error??>
+		<div class="alert alert-danger">${error}.</div>
+		</#if>
+	  </p>
+      
     </div>
 		      
 		

@@ -75,9 +75,32 @@ public final class JogadorDAO extends AbstractDAO<Jogador>{
 		em.persist(jogador);
 	}
 	
+	/**
+	 * @param nome
+	 * @return Jogador
+	 */
 	public Jogador findByNome(String nome){
 		TypedQuery<Jogador> query = this.getEm().createNamedQuery("Jogador.findByNome", Jogador.class);
 		query.setParameter("nome", nome);
-		return query.getResultList().get(0);
+		try{
+			return query.getResultList().get(0);
+		}catch(IndexOutOfBoundsException e){
+			return null;
+		}	
+	}
+	
+	/**
+	 * @param nome
+	 * @param em
+	 * @return Jogador
+	 */
+	public Jogador findByNome(String nome, EntityManager em){
+		TypedQuery<Jogador> query = em.createNamedQuery("Jogador.findByNome", Jogador.class);
+		query.setParameter("nome", nome);
+		try{
+			return query.getResultList().get(0);
+		}catch(IndexOutOfBoundsException e){
+			return null;
+		}	
 	}
 }

@@ -1,10 +1,10 @@
 package br.com.leonardo.pre_dojo.entidade;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
 @Entity
@@ -12,11 +12,11 @@ public class Atividade extends AbstractEntity{
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Partida partida;
-	@OneToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Jogador jogadorMatador;
-	@OneToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Jogador jogadorMorto;
 	private String  arma;
 	
