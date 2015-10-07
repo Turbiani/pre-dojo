@@ -3,6 +3,7 @@ package br.com.leonardo.pre_dojo.entidade;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
@@ -11,7 +12,9 @@ import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
 import br.com.leonardo.pre_dojo.enums.PartidaStatus;
+import br.com.leonardo.pre_dojo.listener.PartidaListener;
 @Entity
+@EntityListeners(PartidaListener.class)
 public class Partida extends AbstractEntity implements Cloneable{
 	@Id
 	private Integer id;

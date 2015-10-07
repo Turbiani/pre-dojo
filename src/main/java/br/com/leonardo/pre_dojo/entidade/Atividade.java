@@ -2,12 +2,15 @@ package br.com.leonardo.pre_dojo.entidade;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
+import br.com.leonardo.pre_dojo.listener.AtividadeListener;
 @Entity
+@EntityListeners(AtividadeListener.class)
 public class Atividade extends AbstractEntity{
 	@Id
 	@GeneratedValue

@@ -5,10 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 import br.com.leonardo.pre_dojo.entidade.base.AbstractEntity;
 @Entity
+@NamedQueries({
+	@NamedQuery(name="ResumoJogadorPartida.findByPartida",	
+			query="Select r from ResumoJogadorPartida r where r.partida.id = :partidaId")
+})
 public class ResumoJogadorPartida extends AbstractEntity {
 	@Id
 	@GeneratedValue
