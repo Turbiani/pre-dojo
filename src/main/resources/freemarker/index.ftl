@@ -29,7 +29,7 @@
       
       <form  class="form-horizontal" role="form" action="/report" method="POST">
         <div class="form-group">
-          <label for="log" class="control-label col-sm-1">Log:</label>
+          <label for="log" class="control-label col-sm-1">Logs:</label>
           <div class="col-sm-4">
             <textarea class="form-control" rows="5" id="log" name="log" ></textarea>
           </div>
